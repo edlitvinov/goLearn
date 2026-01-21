@@ -28,5 +28,12 @@ func main() {
 	// } else {
 	// 	...
 	// }
+	if num := 15; num%2 == 0 {
+		fmt.Println(num)
+		fmt.Println("EVEN")
+	} else {
+		fmt.Println(num)
+		fmt.Println("ODD")
+	}
 
 }
