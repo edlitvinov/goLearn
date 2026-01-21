@@ -44,5 +44,11 @@ func main() {
 	fmt.Printf("Sizeof int == int64 == 8 bytes\n")
 	fmt.Printf("But type int !== type int64\n")
 	fmt.Println("Sizeof signed int == sizeof unsigned int")
+	fmt.Println("------------------------------------------")
+
+	// Numeric. Float
+	fmt.Println("*Float Type*")
+	fmt.Println("------------")
+	fmt.Printf("Float Type in Golang is:\n- float32\n- float64\n")
 
 }
