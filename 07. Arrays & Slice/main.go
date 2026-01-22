@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func main() {
+	fmt.Println("*Arrays*")
+	fmt.Println("---------")
 	var firstArr [5]int // создание массива из 5 int-ов
 	fmt.Println("Array: ", firstArr)
 	fmt.Println()
@@ -43,5 +45,13 @@ func main() {
 		}
 		fmt.Println()
 	}
+	fmt.Println()
+	fmt.Println("*Slices*")
+	fmt.Println("---------")
+	fmt.Println()
+	slice := []int{1, 23, 45, 74}
+	fmt.Printf("slice: %d\n", slice)
+	slice = append(slice, 98)
+	fmt.Printf("slice: %d\n", slice)
 
 }
