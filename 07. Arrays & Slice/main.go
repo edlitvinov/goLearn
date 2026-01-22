@@ -48,10 +48,18 @@ func main() {
 	fmt.Println()
 	fmt.Println("*Slices*")
 	fmt.Println("---------")
+	// Slise - это указатель на массив
 	fmt.Println()
 	slice := []int{1, 23, 45, 74}
 	fmt.Printf("slice: %d\n", slice)
 	slice = append(slice, 98)
 	fmt.Printf("slice: %d\n", slice)
+	fmt.Println()
+	startArr := [4]int{10, 20, 30, 40}
+	var startSlice []int = startArr[0:2]
+	fmt.Println("slice [0:2] :", startSlice)
+	fmt.Println()
+	s1 := make([]int, 7, 14)
+	fmt.Println(s1)
 
 }
