@@ -46,5 +46,14 @@ func main() {
 	fmt.Println("*While loop*")
 	fmt.Println("-------------")
 	fmt.Print()
+	var loopVar int = 0
+	for loopVar < 7 {
+		fmt.Printf("while loop: %d\n", loopVar)
+		loopVar++
+	}
+	fmt.Println()
+	for x, y := 0, 1; x <= 10 && y <= 12; x, y = x+1, y+2 {
+		fmt.Printf("%d + %d = %d\n", x, y, x+y)
+	}
 
 }
