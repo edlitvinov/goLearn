@@ -3,11 +3,12 @@ package main
 import "fmt"
 
 // Определение простой функции
-// func printPrice() {
-// 	kayakPrice := 275.00
-// 	kayakTax := kayakPrice * 0.2
-// 	fmt.Println("Price: ", kayakPrice)
-// 	fmt.Println("Tax: ", kayakTax)
+func price() {
+	kayakPrice := 275.00
+	kayakTax := kayakPrice * 0.2
+	fmt.Println("Price: ", kayakPrice)
+	fmt.Println("Tax: ", kayakTax)
+}
 
 // Определение и использование параметров функции
 func printPrice(product string, price, taxRate float64) {
@@ -16,16 +17,32 @@ func printPrice(product string, price, taxRate float64) {
 	fmt.Println("---------------")
 }
 
+// пропуск имен параметров
+// пустой идентификатор _
+func newProd(product string, price, _ float64) {
+	taxAmount := price * 0.15
+	fmt.Printf("%s\nprace: %.2f\nTax: %.2f\n", product, price, taxAmount)
+}
+
 func main() {
 	// Вызов функции printPrice()
-	// fmt.Println("About to coll function")
-	// printPrice()
-	// fmt.Println("Function complit")
+	fmt.Println("About to coll function")
+	price()
+	fmt.Println("Function complit")
+	fmt.Println("------------------")
 
 	// Вызов функции printPrice() с аргументами
-
+	fmt.Println("Defining and Using Function Parameters")
+	fmt.Println("---------------------------------------")
 	printPrice("Kayak", 350, 0.5)
 	printPrice("LifeJacket", 37.85, 0.3)
 	printPrice("Soccer Ball", 17.50, 0.1)
 
+	//вызов функции с пустым идентификатором
+	fmt.Println("Omitting Parameter Names")
+	fmt.Println("-------------------------")
+	newProd("Kayak", 380, 0.2)
+	newProd("LifeJacket", 37.45, 0.1)
+	newProd("Kayak", 20.40, 0.15)
+	fmt.Println("------------------")
 }
