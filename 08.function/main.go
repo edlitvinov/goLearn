@@ -24,6 +24,13 @@ func newProd(product string, price, _ float64) {
 	fmt.Printf("%s\nprace: %.2f\nTax: %.2f\n", product, price, taxAmount)
 }
 
+// функция с вариативными параметрами
+func printSuppliers(product string, suppliers []string) {
+	for _, supplier := range suppliers {
+		fmt.Printf("Product: %s\nSupplier: %s\n", product, supplier)
+	}
+}
+
 func main() {
 	// Вызов функции printPrice()
 	fmt.Println("About to coll function")
@@ -45,4 +52,11 @@ func main() {
 	newProd("LifeJacket", 37.45, 0.1)
 	newProd("Kayak", 20.40, 0.15)
 	fmt.Println("------------------")
+
+	// вызов функции с вариативными параметрами, вместо массива можно применить "..."
+	fmt.Println("Dealing with No Arg's for a Variadic Param.")
+	fmt.Println("--------------------------------------------")
+	printSuppliers("Kayak", []string{"Acme Kayaks", "Bob's Boats", "Crayzy Canors"})
+	printSuppliers("LifeJacket", []string{"Sail Safe Co"})
+
 }
