@@ -26,8 +26,12 @@ func newProd(product string, price, _ float64) {
 
 // функция с вариативными параметрами
 func printSuppliers(product string, suppliers ...string) {
-	for _, supplier := range suppliers {
-		fmt.Printf("Product: %s\nSupplier: %s\n", product, supplier)
+	if len(suppliers) == 0 {
+		fmt.Printf("Product: %s\nSuppliers: none!", product)
+	} else {
+		for _, supplier := range suppliers {
+			fmt.Printf("Product: %s\nSupplier: %s\n", product, supplier)
+		}
 	}
 }
 
@@ -57,6 +61,7 @@ func main() {
 	fmt.Println("Dealing with No Arg's for a Variadic Param.")
 	fmt.Println("--------------------------------------------")
 	printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crayzy Canors")
-	//printSuppliers("LifeJacket", []string{"Sail Safe Co"})
+	printSuppliers("LifeJacket", "Sail Safe Co")
+	printSuppliers("Sail Safe Co")
 
 }
