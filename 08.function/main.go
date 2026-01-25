@@ -60,7 +60,9 @@ func main() {
 	// вызов функции с вариативными параметрами, вместо массива можно применить "..."
 	fmt.Println("Dealing with No Arg's for a Variadic Param.")
 	fmt.Println("--------------------------------------------")
-	printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crayzy Canors")
+	nameSupp := []string{"Acme Kayaks", "Bob's Boats", "Crayzy Canors"}
+	//printSuppliers("Kayak", "Acme Kayaks", "Bob's Boats", "Crayzy Canors")
+	printSuppliers("Kayak", nameSupp...)
 	printSuppliers("LifeJacket", "Sail Safe Co")
 	printSuppliers("Sail Safe Co")
 
