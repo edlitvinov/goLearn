@@ -49,6 +49,11 @@ func calcTax(price float64) float64 {
 	return price + (price * 0.2)
 }
 
+// возврат функцией нескольких результатов
+func swapVal(first, second int) (int, int) {
+	return second, first
+}
+
 func main() {
 	// Вызов функции printPrice()
 	fmt.Println("About to coll function")
@@ -97,5 +102,13 @@ func main() {
 		priceWithTax := calcTax(price)
 		fmt.Printf("Product: %s\nPrice: %.2f\n", product, priceWithTax)
 	}
+	fmt.Println("---------------------")
+	fmt.Println("")
+	fmt.Println("Return Multiple Function Results")
+	fmt.Println("---------------------------------")
+	v1, v2 := 37, 48
+	fmt.Printf("Before calling func:\nv1: %d\nv2: %d\n", v1, v2)
+	v1, v2 = swapVal(v1, v2)
+	fmt.Printf("After calling func:\nv1: %d\nv2: %d\n", v1, v2)
 
 }
