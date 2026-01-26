@@ -44,20 +44,25 @@ func swap(first, second *int) {
 	fmt.Printf("After swap:\nfirst: %v\nsecond: %v\n", *first, *second)
 }
 
+// Использование результатов функции
+func calcTax(price float64) float64 {
+	return price + (price * 0.2)
+}
+
 func main() {
 	// Вызов функции printPrice()
 	fmt.Println("About to coll function")
 	price()
 	fmt.Println("Function complit")
 	fmt.Println("------------------")
-
+	fmt.Println("")
 	// Вызов функции printPrice() с аргументами
 	fmt.Println("Defining and Using Function Parameters")
 	fmt.Println("---------------------------------------")
 	printPrice("Kayak", 350, 0.5)
 	printPrice("LifeJacket", 37.85, 0.3)
 	printPrice("Soccer Ball", 17.50, 0.1)
-
+	fmt.Println("")
 	//вызов функции с пустым идентификатором
 	fmt.Println("Omitting Parameter Names")
 	fmt.Println("-------------------------")
@@ -65,7 +70,7 @@ func main() {
 	newProd("LifeJacket", 37.45, 0.1)
 	newProd("Kayak", 20.40, 0.15)
 	fmt.Println("------------------")
-
+	fmt.Println("")
 	// вызов функции с вариативными параметрами, вместо массива можно применить "..."
 	fmt.Println("Dealing with No Arg's for a Variadic Param.")
 	fmt.Println("--------------------------------------------")
@@ -74,12 +79,23 @@ func main() {
 	printSuppliers("Kayak", nameSupp...)
 	printSuppliers("LifeJacket", "Sail Safe Co")
 	printSuppliers("Sail Safe Co")
-	fmt.Println()
+	fmt.Println("")
 	fmt.Println("Указатели в качестве параметров")
 	fmt.Println("--------------------------------")
 	num1, num2 := 12, 17
 	fmt.Printf("value NUM1: %d\nvalue NUM2: %d\n", num1, num2)
 	swap(&num1, &num2)
 	fmt.Printf("After SWAP:\nNUM1: %d\nNUM2: %d\n", num1, num2)
+	fmt.Println("")
+	fmt.Println("---------------------")
+	products := map[string]float64{
+		"Kayak":      275.45,
+		"LifeJacket": 35.85,
+	}
+
+	for product, price := range products {
+		priceWithTax := calcTax(price)
+		fmt.Printf("Product: %s\nPrice: %.2f\n", product, priceWithTax)
+	}
 
 }
